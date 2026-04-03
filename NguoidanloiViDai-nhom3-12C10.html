@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người Dẫn Lối Vĩ Đại - Hành Trình Hồ Chí Minh</title>
+    <style>
+        :root {
+            --primary: #b22222;
+            --secondary: #ffd700;
+            --accent: #2c3e50;
+            --bg: #f9f7f0;
+            --text: #333;
+        }
+
+        body { font-family: 'Times New Roman', Times, serif; line-height: 1.8; margin: 0; background: var(--bg); color: var(--text); }
+        
+        header { 
+            background: linear-gradient(rgba(178,34,34,0.9), rgba(178,34,34,0.9)), 
+            url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Ho_Chi_Minh_1946.jpg/800px-Ho_Chi_Minh_1946.jpg');
+            background-size: cover; background-position: center;
+            color: white; text-align: center; padding: 60px 20px; border-bottom: 5px solid var(--secondary);
+        }
+
+        nav { 
+            background: var(--accent); position: sticky; top: 0; z-index: 1000; 
+            display: flex; flex-wrap: wrap; justify-content: center; padding: 10px; gap: 5px;
+        }
+
+        nav button { 
+            background: rgba(255,255,255,0.1); border: 1px solid var(--secondary); 
+            color: white; padding: 8px 15px; cursor: pointer; transition: 0.3s; font-size: 0.9rem; border-radius: 4px;
+        }
+
+        nav button:hover, nav button.active { background: var(--secondary); color: black; font-weight: bold; }
+
+        .container { max-width: 1000px; margin: 30px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        
+        .section { display: none; animation: fadeIn 0.5s ease; }
+        .section.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; text-transform: uppercase; font-size: 1.6rem; }
+        h3 { color: #8b0000; margin-top: 25px; font-size: 1.3rem; }
+        
+        .info-box { background: #fffcf0; border: 1px solid #e6dbb9; padding: 20px; border-radius: 5px; margin: 15px 0; }
+        .highlight { font-weight: bold; color: var(--primary); }
+
+        .img-container { text-align: center; margin: 20px 0; }
+        .img-container img { max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #ccc; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .img-caption { font-style: italic; font-size: 0.9rem; color: #666; margin-top: 8px; display: block; }
+
+        .quiz-container { background: #f0f0f0; padding: 30px; border-radius: 10px; border: 2px solid var(--accent); }
+        .option-btn { 
+            display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0; 
+            border: 1px solid #ccc; background: white; cursor: pointer; border-radius: 5px; font-size: 1rem;
+        }
+        .option-btn:hover { background: #e9e9e9; }
+        .correct { background: #d4edda !important; border-color: #28a745 !important; color: #155724; font-weight: bold; }
+        .wrong { background: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+
+        footer { text-align: center; padding: 40px; background: var(--accent); color: white; margin-top: 50px; }
+
+        @media (max-width: 768px) {
+            nav button { font-size: 0.8rem; padding: 6px 10px; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NGƯỜI DẪN LỐI VĨ ĐẠI</h1>
+    <p>Hành trình tìm đường cứu nước của Chủ tịch Hồ Chí Minh</p>
+</header>
+
+<nav id="navbar">
+    <button onclick="showSection(0)" class="active">🏠 Trang chủ</button>
+    <button onclick="showSection(1)">I. Tiểu sử</button>
+    <button onclick="showSection(2)">II. Bối cảnh</button>
+    <button onclick="showSection(3)">III. Hành trình 3 Châu</button>
+    <button onclick="showSection(4)">IV. Bước ngoặt 1920</button>
+    <button onclick="showSection(5)">V. Hoạt động 1920-1930</button>
+    <button onclick="showSection(6)">VI. Lập Đảng 1930</button>
+    <button onclick="showSection(7)">VII. Về nước 1941</button>
+    <button onclick="showSection(8)">VIII-IX. Thành quả</button>
+    <button onclick="showSection(9)" style="background: var(--primary);">TRẮC NGHIỆM</button>
+</nav>
+
+<div class="container">
+    <section id="s0" class="section active">
+        <h2>Giới thiệu</h2>
+        <p>Chào mừng bạn đến với tài liệu học tập về Chủ tịch Hồ Chí Minh(nguồn: EzSu).</p>
+        <div class="img-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Qu3yMoQfWXI?si=9A74oPGAA5iMLg2_&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="s1" class="section">
+        <h2>Phần I: Tiểu sử và Nguyên nhân</h2>
+        
+        <div class="img-container">
+            <img src="img/Bac Ho.jpg" alt="Chủ tịch Hồ Chí Minh">
+            <span class="img-caption">Chân dung Chủ tịch Hồ Chí Minh( nguồn: Báo thanh niên)</span>
+        </div>
+
+        <h3>1. Thông tin về tiểu sử ngắn của Hồ Chí Minh</h3>
+        <p>Chủ tịch Hồ Chí Minh (1890–1969), tên khai sinh là Nguyễn Sinh Cung, là lãnh tụ vĩ đại của dân tộc Việt Nam. Sinh ngày 19/5/1890 tại Nghệ An, Người ra đi tìm đường cứu nước năm 1911, sáng lập Đảng Cộng sản Việt Nam, lãnh đạo giành độc lập (1945) và là Chủ tịch nước đầu tiên (1945–1969), được UNESCO vinh danh Anh hùng giải phóng dân tộc, Danh nhân văn hóa kiệt xuất.</p>
+        
+        <div class="info-box">
+            <strong>a) Thời niên thiếu và gia đình</strong>
+            <ul>
+                <li>Tên gọi: Nguyễn Sinh Cung (thời nhỏ), Nguyễn Tất Thành (khi đi học), Nguyễn Ái Quốc (hoạt động cách mạng).</li>
+                <li>Ngày sinh: 19/5/1890.</li>
+                <li>Quê quán: Làng Hoàng Trù (quê ngoại) và làng Sen (quê nội), xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An</li>
+                <li>Gia đình: Cha là Nguyễn Sinh Sắc, mẹ là Hoàng Thị Loan. Xuất thân trong gia đình nhà nho yêu nước.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>b) Hành trình tìm đường cứu nước (1911–1941)</strong>
+            <ul>
+                <li>1911: Từ cảng Nhà Rồng, Người rời Việt Nam sang phương Tây tìm đường cứu nước.</li>
+                <li>1919: Lấy tên Nguyễn Ái Quốc, gửi bản Yêu sách đòi quyền tự do cho nhân dân Việt Nam tại Hội nghị Versailles.</li>
+                <li>1920: Tham gia sáng lập Đảng Cộng sản Pháp, trở thành người cộng sản Việt Nam đầu tiên.</li>
+                <li>1925: Thành lập Hội Việt Nam Cách mạng Thanh niên tại Quảng Châu (Trung Quốc).</li>
+                <li>1930: Hợp nhất các tổ chức cộng sản, thành lập Đảng Cộng sản Việt Nam.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>c) Lãnh đạo Cách mạng và làm Chủ tịch nước (1941–1969)</strong>
+            <ul>
+                <li>1941: Về nước, xây dựng căn cứ địa cách mạng, thành lập Việt Nam Độc lập Đồng minh (Việt Minh).</li>
+                <li>1945: Lãnh đạo Cách mạng Tháng Tám thành công. Ngày 2/9/1945, đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.</li>
+                <li>1945–1969: Trên cương vị Chủ tịch nước, Người lãnh đạo nhân dân kháng chiến chống Pháp và chống Mỹ.</li>
+                <li>1969: Qua đời ngày 2/9/1969 tại Hà Nội.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>d) Di sản và Vinh danh</strong>
+            <ul>
+                <li>Năm 1990, nhân kỷ niệm 100 năm ngày sinh, UNESCO tôn vinh Hồ Chí Minh là "Anh hùng giải phóng dân tộc và Nhà văn hóa kiệt xuất của Việt Nam".</li>
+                <li>Tư tưởng Hồ Chí Minh là tài sản tinh thần quý báu của Đảng và dân tộc Việt Nam.</li>
+            </ul>
+        </div>
+
+        <h3>3. Nguyên nhân Bác Hồ quyết định ra đi tìm đường cứu nước</h3>
+        <p>Nguyên nhân Người quyết định ra đi tìm đường cứu nước: Nguyễn Tất Thành sinh ra và lớn lên trong hoàn cảnh nước nhà rơi vào tay thực dân Pháp. Nhiều cuộc khởi nghĩa và phong trào đấu tranh nổ ra liên tiếp nhưng đều thất bại. Đau xót trước cảnh mất nước, nhà tan. Trước sự thất bại của các phong trào yêu nước đầu thế kỷ, sự đàn áp, bóc lột của thực dân Pháp đã thôi thúc Nguyễn Tất Thành ra đi tìm đường cứu nước mới dân tộc.</p>
+    </section>
+
+    <section id="s2" class="section">
+        <h2>Phần I (Tiếp): Bối cảnh Việt Nam cuối thế kỉ XIX - đầu XX</h2>
+        
+        <div class="img-container">
+            <img src="img/AnhXua_Cang.jpg" alt="Khai thác thuộc địa">
+            <span class="img-caption">Cảnh lao động khổ sai của công nhân Việt Nam thời Pháp thuộc( nguồn: sachhiem.net)</span>
+        </div>
+
+        <h3>a. Bối cảnh Chính trị: Sự sụp đổ của chế độ phong kiến</h3>
+        <p>Sau khi thực dân Pháp nổ súng xâm lược tại Đà Nẵng (1858), triều đình nhà Nguyễn dần suy yếu và từng bước đầu hàng qua các bản hiệp ước (Nhâm Tuất, Giáp Tuất, Hác-măng, Pa-tơ-nốt).</p>
+        <ul>
+            <li><strong>Chính quyền thực dân:</strong> Đến năm 1884, Việt Nam hoàn toàn trở thành thuộc địa của Pháp. Pháp thành lập Liên bang Đông Dương, xóa tên Việt Nam trên bản đồ thế giới, chia nước ta thành ba kỳ (Bắc Kỳ, Trung Kỳ, Nam Kỳ) với ba chế độ cai trị khác nhau.</li>
+            <li><strong>Sự bất lực của nhà Nguyễn:</strong> Triều đình chỉ còn là bù nhìn, làm tay sai cho Pháp. Các phong trào kháng chiến tự phát của nhân dân và các sĩ phu yêu nước (như phong trào Cần Vương) lần lượt thất bại do thiếu đường lối đúng đắn.</li>
+        </ul>
+
+        <h3>b. Bối cảnh Kinh tế: Cuộc khai thác thuộc địa lần thứ nhất (1897 - 1914)</h3>
+        <p>Sau khi bình định về quân sự, thực dân Pháp bắt đầu khai thác kinh tế quy mô lớn để bù đắp chi phí xâm lược:</p>
+        <ul>
+            <li><strong>Nông nghiệp:</strong> Pháp đẩy mạnh cướp đoạt ruộng đất, thiết lập các đồn điền cao su, cà phê, chè. Nông dân mất đất, phải đi làm thuê hoặc chịu sưu cao thuế nặng.</li>
+            <li><strong>Công nghiệp & Giao thông:</strong> Tập trung khai thác khoáng sản (than đá ở Quảng Ninh, thiếc, kẽm...) và xây dựng hệ thống đường sắt, đường bộ để phục vụ vận chuyển tài nguyên về Pháp.</li>
+            <li><strong>Mục tiêu:</strong> Biến Việt Nam thành thị trường tiêu thụ hàng hóa ế ẩm của Pháp và là nơi cung cấp nguyên liệu rẻ mạt.</li>
+        </ul>
+
+        <h3>c. Biến đổi Xã hội: Sự xuất hiện của các giai cấp mới</h3>
+        <p>Cơ cấu xã hội Việt Nam thay đổi sâu sắc do tác động của cuộc khai thác kinh tế:</p>
+        <ul>
+            <li><strong>Giai cấp cũ:</strong> 
+                <ul>
+                    <li>Địa chủ: Phân hóa thành địa chủ yêu nước và địa chủ phong kiến tay sai.</li>
+                    <li>Nông dân: Chiếm đa số, bị áp bức nặng nề nhất, là lực lượng cách mạng đông đảo.</li>
+                </ul>
+            </li>
+            <li><strong>Giai cấp và tầng lớp mới:</strong>
+                <ul>
+                    <li>Công nhân: Ra đời gắn liền với các hầm mỏ, đồn điền và nhà máy. Đây là giai cấp tiên phong sau này.</li>
+                    <li>Tư sản dân tộc: Bị tư bản Pháp chèn ép nên có tinh thần dân tộc.</li>
+                    <li>Tiểu tư sản thành thị: Bao gồm học sinh, sinh viên, trí thức, tiểu thương... nhạy bén với thời cuộc và các tư tưởng mới từ bên ngoài.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>d. Sự bế tắc về đường lối cứu nước</h3>
+        <p>Đầu thế kỷ XX, các sĩ phu yêu nước tiến bộ (như Phan Bội Châu, Phan Châu Trinh) đã nhận ra sự lạc hậu của tư tưởng phong kiến và hướng về con đường dân chủ tư sản (như Nhật Bản hay Pháp):</p>
+        <ul>
+            <li><strong>Xu hướng bạo động (Phan Bội Châu):</strong> Dựa vào Nhật để đánh Pháp (phong trào Đông Du) nhưng thất bại vì Nhật bắt tay với Pháp.</li>
+            <li><strong>Xu hướng cải cách (Phan Châu Trinh):</strong> Muốn dựa vào Pháp để duy tân, nâng cao dân trí nhưng cũng không thành công vì bản chất thực dân không thay đổi.</li>
+        </ul>
+    </section>
+
+    <section id="s3" class="section">
+        <h2>Phần II & III: Rời Bến Nhà Rồng và Hành trình 3 Châu lục</h2>
+        
+        <div class="img-container">
+            <img src="img/15.Toan-Canh-Dai-Hoi-Tour-Phap-1920.jpg" alt="Bến Nhà Rồng">
+            <span class="img-caption">Bến cảng Nhà Rồng (Sài Gòn) (nguồn: báo Hà Nội Mới)</span>
+        </div>
+
+        <h3>Sự kiện Bác Hồ rời bến Nhà Rồng và mục tiêu ban đầu</h3>
+        <div class="info-box">
+            <strong>a) Diễn biến sự kiện Bến cảng Nhà Rồng:</strong>
+            <ul>
+                <li>Thời gian: Ngày 5 tháng 6 năm 1911.</li>
+                <li>Địa điểm: Bến cảng Nhà Rồng, Sài Gòn (nay là Bảo tàng Hồ Chí Minh - Chi nhánh TP. HCM).</li>
+                <li>Nhân vật: Chàng thanh niên Nguyễn Tất Thành (lúc đó 21 tuổi) với cái tên mới là Văn Ba.</li>
+                <li>Hành động: Người xin làm phụ bếp trên con tàu buôn Đô đốc Latouche-Tréville của hãng vận tải Hợp nhất (Pháp) để bắt đầu hành trình sang phương Tây.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>b) Mục tiêu ban đầu của chuyến đi</strong>
+            <p>Khác với các bậc tiền bối như Phan Bội Châu (hướng về phương Đông - Nhật Bản) hay Phan Châu Trinh (muốn dựa vào Pháp để cải cách), mục tiêu của Nguyễn Tất Thành mang tính thực tiễn và độc lập rất cao:</p>
+            <p><span class="highlight">Tìm hiểu bản chất của kẻ thù:</span> Người muốn đến tận "sào huyệt" của thực dân Pháp để tìm hiểu xem: Tại sao nước Pháp lại giàu mạnh? Đằng sau những từ ngữ hoa mỹ như "Tự do - Bình đẳng - Bác ái" mà thực dân Pháp rêu rao là gì? Người từng nói: "Tôi muốn đi ra ngoài, xem nước Pháp và các nước khác. Sau khi xem xét họ làm như thế nào, tôi sẽ trở về giúp đồng bào chúng ta."</p>
+            <p><span class="highlight">Tìm kiếm một con đường mới:</span> Người nhận thấy các phong trào cứu nước trước đó (Cần Vương, Đông Du, Duy Tân) đều thất bại vì chưa có đường lối đúng đắn. Mục tiêu của Người là khảo sát các cuộc cách mạng trên thế giới (như Cách mạng Mỹ 1776, Cách mạng Pháp 1789) để xem có thể áp dụng gì cho Việt Nam.</p>
+            <p><span class="highlight">Xác định lực lượng và đồng minh:</span> Người muốn tìm hiểu xem ở các nước tư bản, người dân lao động sống ra sao, họ có bị áp bức giống người dân Việt Nam không, từ đó tìm kiếm những người bạn đồng hành thực sự cho cuộc đấu tranh giành độc lập.</p>
+        </div>
+
+        <h3>Hành trình qua các quốc gia</h3>
+        
+        <div class="info-box">
+            <strong>1. Khu vực Châu Phi</strong>
+            <p>Trên con tàu Đô đốc Latouche-Tréville, Bác đã ghé qua nhiều cảng biển ở Bắc Phi và Tây Phi như Ai Cập, Algérie, Tunisia, Senegal, Guinea, Congo...</p>
+            <ul>
+                <li>Công việc & Cuộc sống: Người làm phụ bếp trên tàu, tận mắt chứng kiến cuộc sống khổ cực của những người dân phu phen, bốc vác tại các bến cảng.</li>
+                <li>Trải nghiệm thực tế: Tại Senegal, khi chứng kiến cảnh những người da đen bị sóng cuốn trôi nhưng thực dân Pháp không hề cứu giúp, Người đã vô cùng xúc động.</li>
+                <li>Nhận thức: Người rút ra kết luận quan trọng: Ở đâu bọn thực dân cũng tàn bạo, độc ác và ở đâu những người lao động nghèo khổ cũng là bạn bè của nhau.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>2. Khu vực Châu Mỹ</strong>
+            <div class="img-container">
+                <img src="img/Statue_of_Liberty_7.jpg" alt="Tượng Nữ thần Tự do" style="width: 250px;">
+                <span class="img-caption">Tượng Nữ thần Tự do tại Mỹ - nơi Người dừng chân khảo sát(nguồn:  Ảnh: vi.wikipedia.org) </span>
+            </div>
+            <p>Khoảng cuối năm 1912, Người sang Hoa Kỳ, dừng chân tại New York và Boston, sau đó có thời gian ở Brazil và Uruguay.</p>
+            <ul>
+                <li>Công việc & Cuộc sống: Người làm thuê, làm vườn và nhiều công việc chân tay khác để kiếm sống.</li>
+                <li>Trải nghiệm thực tế: Người đến thăm tượng Nữ thần Tự do nhưng không chỉ nhìn vẻ bề ngoài; Người viết: "Ánh sáng trên đầu tượng Nữ thần Tự do tỏa chiếu khắp trời xanh, nhưng dưới chân tượng Nữ thần Tự do thì người da đen đang bị áp bức". Người tìm hiểu về Tuyên ngôn Độc lập của Mỹ (1776) với những quyền cơ bản của con người.</li>
+                <li>Nhận thức: Người nhận ra rằng đằng sau sự giàu có, hoa lệ của các nước tư bản là sự bất công đối với người lao động và sự phân biệt chủng tộc nặng nề.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>3. Khu vực Châu Âu</strong>
+            <div class="img-container">
+                <img src="img/04062011tcq1219503278.jpg" alt="Nguyễn Ái Quốc tại Pháp" style="width: 300px;">
+                <span class="img-caption">Nguyễn Ái Quốc trong những năm tháng tại Pháp(nguồn: Báo Quân Đội Nhân Dân) </span>
+            </div>
+            <p>Đây là nơi Người dừng chân lâu nhất, đi qua Anh và đặc biệt là Pháp.</p>
+            <ul>
+                <li>Công việc & Cuộc sống: Tại Anh: Cào tuyết, đốt lò, phụ bếp (tại khách sạn Carlton). Tại Pháp: Làm thuê cho tiệm ảnh, vẽ thuê cho các cửa hàng đồ cổ, viết báo, làm bù nhìn (cho thuê mướn nhân vật).</li>
+                <li>Trải nghiệm thực tế: Người tham gia Công đoàn, Đảng Xã hội Pháp để tìm hiểu về các tổ chức chính trị. Gửi Bản yêu sách của nhân dân An Nam (1919) tới Hội nghị Versailles nhưng bị phớt lờ. Đọc bản Sơ thảo Luận cương của Lênin về vấn đề dân tộc và thuộc địa (1920).</li>
+                <li>Nhận thức: Đây là giai đoạn nhận thức của Người trở nên hoàn chỉnh nhất. Từ việc chỉ muốn tìm đường cứu nước, Người đã tìm thấy Chủ nghĩa Mác - Lênin. Người nhận ra kẻ thù chung của nhân dân các nước thuộc địa chính là chủ nghĩa thực dân, và cách mạng giải phóng dân tộc phải gắn liền với cách mạng vô sản.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="s4" class="section">
+        <h2>Phần IV: Những bước ngoặt tư tưởng năm 1920</h2>
+        <div class="img-container">
+            <img src="img/15.Toan-Canh-Dai-Hoi-Tour-Phap-1920.jpg" alt="Đại hội Tour">
+            <span class="img-caption"> Đại hội Tour (Pháp) năm 1920(nguồn: BảoTangHoChiMinh) </span>
+        </div>
+        <p>Đây là thời điểm mang tính quyết định, đánh dấu sự chuyển biến từ chủ nghĩa yêu nước sang chủ nghĩa cộng sản.</p>
+        
+        <div class="info-box">
+            <strong>Tiếp cận chủ nghĩa Mác – Lênin:</strong>
+            <ul>
+                <li>Tháng 7/1920, Nguyễn Ái Quốc đọc bản Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và vấn đề thuộc địa của V.I. Lênin.</li>
+                <li>Ý nghĩa: Bản luận cương đã giải đáp cho Người con đường giải phóng dân tộc: "Muốn cứu nước và giải phóng dân tộc không có con đường nào khác con đường cách mạng vô sản".</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>Sự kiện tham gia Đảng Xã hội Pháp:</strong>
+            <ul>
+                <li>Tháng 12/1920, tại Đại hội Tour (Pháp), Người đã bỏ phiếu tán thành việc gia nhập Quốc tế Cộng sản và tham gia sáng lập Đảng Cộng sản Pháp.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>Nhận ra con đường cứu nước đúng đắn:</strong>
+            <ul>
+                <li>Sự kiện này đánh dấu Nguyễn Ái Quốc từ một người yêu nước chân chính trở thành một chiến sĩ cộng sản quốc tế. Con đường cứu nước của dân tộc Việt Nam chính thức gắn liền với cách mạng thế giới.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="s5" class="section">
+        <h2>Phần V: Hoạt động cách mạng (1920–1930)</h2>
+        <div class="img-container">
+            <img src="img/03-02-2021-su-truyen-ba-chu-nghia-marx-lenin-vao-viet-nam-va-su-tat-yeu-ra-doi-cua-dang-cong-san-38B21B06.jpg" alt="Hoạt động tại nước ngoài">
+            <span class="img-caption">Nguyễn Ái Quốc hoạt động tích cực để truyền bá chủ nghĩa Mác-Lênin(nguồn: Đảng Bộ tpHcm) </span>
+        </div>
+        <p>Đây là giai đoạn chuẩn bị quyết liệt về cả tư tưởng và tổ chức cho sự ra đời của Đảng.</p>
+        
+        <div class="info-box">
+            <strong>Tham gia phong trào cộng sản quốc tế:</strong>
+            <ul>
+                <li>Người đi từ Pháp sang Liên Xô (1923) để nghiên cứu thực tiễn xây dựng chủ nghĩa xã hội và làm việc tại Quốc tế Cộng sản. Điều này giúp Người tích lũy kinh nghiệm lãnh đạo phong trào công nhân toàn cầu.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>Thành lập các tổ chức cách mạng:</strong>
+            <ul>
+                <li>Năm 1925, tại Quảng Châu (Trung Quốc), Người thành lập Hội Việt Nam Cách mạng Thanh niên (tiền thân của Đảng). Đây là nơi đào tạo những cán bộ cốt cán đầu tiên.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>Chuẩn bị về tư tưởng và tổ chức cho Việt Nam:</strong>
+            <ul>
+                <li>Về tư tưởng: Người truyền bá chủ nghĩa Mác – Lênin vào Việt Nam qua báo Thanh niên và tác phẩm Đường Kách mệnh (1927).</li>
+                <li>Về tổ chức: Xây dựng hệ thống cơ sở cách mạng trong nước, thúc đẩy phong trào công nhân và phong trào yêu nước phát triển mạnh mẽ theo khuynh hướng vô sản.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="s6" class="section">
+        <h2>Phần VI: Sự kiện thành lập Đảng Cộng sản Việt Nam (1930)</h2>
+        <div class="img-container">
+            <img src="img/24_Jan_2021_070539_GMTdhdang.jpg" alt="Thành lập Đảng">
+            <span class="img-caption">Hội nghị thành lập Đảng năm 1930(nguồn: www.vwu.vn) </span>
+        </div>
+        
+        <h3>1. Hoàn cảnh ra đời</h3>
+        <p>Cuối những năm 1920, phong trào yêu nước và phong trào công nhân ở Việt Nam phát triển mạnh. Tuy nhiên, lúc này lại tồn tại 3 tổ chức cộng sản riêng rẽ:</p>
+        <ul>
+            <li>Đông Dương Cộng sản Đảng</li>
+            <li>An Nam Cộng sản Đảng</li>
+            <li>Đông Dương Cộng sản Liên đoàn</li>
+        </ul>
+        <p>--&gt; Điều này gây chia rẽ lực lượng, cần có một tổ chức thống nhất.</p>
+
+        <h3>2. Vai trò của Bác Hồ</h3>
+        <p>Hồ Chí Minh (lúc đó hoạt động với tên Nguyễn Ái Quốc) đã:</p>
+        <ul>
+            <li>Nhận thấy cần thống nhất các tổ chức cộng sản</li>
+            <li>Triệu tập hội nghị hợp nhất</li>
+        </ul>
+
+        <h3>3. Sự kiện thành lập</h3>
+        <ul>
+            <li>Thời gian: 3/2/1930</li>
+            <li>Địa điểm: Hồng Kông</li>
+            <li>Nội dung chính: Hợp nhất các tổ chức cộng sản; Thành lập Đảng Cộng sản Việt Nam; Thông qua các văn kiện quan trọng như: Cương lĩnh chính trị đầu tiên, Điều lệ Đảng</li>
+        </ul>
+
+        <h3>4. Nội dung Cương lĩnh chính trị đầu tiên</h3>
+        <p>Do Hồ Chí Minh soạn thảo, xác định:</p>
+        <ul>
+            <li>Nhiệm vụ: đánh đổ đế quốc và phong kiến</li>
+            <li>Mục tiêu: làm cho Việt Nam độc lập</li>
+            <li>Lực lượng: công nhân, nông dân là chủ lực</li>
+            <li>Gắn cách mạng Việt Nam với cách mạng thế giới</li>
+        </ul>
+
+        <h3>5. Ý nghĩa lịch sử</h3>
+        <ul>
+            <li>Là bước ngoặt vĩ đại của cách mạng Việt Nam</li>
+            <li>Chấm dứt tình trạng khủng hoảng về đường lối và lãnh đạo</li>
+            <li>Khẳng định vai trò lãnh đạo của giai cấp công nhân</li>
+            <li>Mở ra con đường đúng đắn cho cách mạng Việt Nam</li>
+        </ul>
+    </section>
+
+    <section id="s7" class="section">
+        <h2>Phần VII: Quá trình trở về lãnh đạo cách mạng (1941)</h2>
+        <div class="img-container">
+            <img src="img/Cốc_Bó.jpg" alt="Hang Pác Bó">
+            <span class="img-caption">Khu di tích Hang Pác Bó - Nơi Bác về nước làm việc(nguồn: wikipedia) </span>
+        </div>
+        
+        <h3>1. Hoàn cảnh trở về</h3>
+        <p>Sau hơn 30 năm hoạt động ở nước ngoài để tìm đường cứu nước, Bác quyết định trở về Việt Nam. Thời điểm này:</p>
+        <ul>
+            <li>Chiến tranh thế giới thứ hai đang diễn ra.</li>
+            <li>Thực dân Pháp suy yếu, phát xít Nhật tiến vào Đông Dương → tình hình chính trị rối ren.</li>
+            <li>Đây là cơ hội thuận lợi để thúc đẩy cách mạng giải phóng dân tộc.</li>
+        </ul>
+
+        <h3>2. Sự kiện trở về (1941)</h3>
+        <ul>
+            <li>Ngày 28/1/1941, Bác Hồ về nước sau 30 năm xa Tổ quốc.</li>
+            <li>Địa điểm: Pác Bó (Cao Bằng).</li>
+            <li>Bác trực tiếp lãnh đạo phong trào cách mạng trong nước.</li>
+        </ul>
+
+        <h3>3. Hoạt động lãnh đạo quan trọng</h3>
+        <p>Sau khi về nước, Bác đã:</p>
+        <ul>
+            <li><strong>Thành lập mặt trận:</strong> Tháng 5/1941, Bác chủ trì Hội nghị Trung ương 8. Thành lập Mặt trận Việt Minh → Tập hợp toàn dân đoàn kết chống Pháp – Nhật.</li>
+            <li><strong>Xác định nhiệm vụ cách mạng:</strong> Đặt nhiệm vụ giải phóng dân tộc lên hàng đầu. Tạm gác các vấn đề khác (ruộng đất, giai cấp…) để tập trung chống ngoại xâm.</li>
+            <li><strong>Xây dựng lực lượng:</strong> Phát triển căn cứ địa cách mạng ở Cao Bằng. Chuẩn bị lực lượng chính trị và vũ trang cho khởi nghĩa.</li>
+        </ul>
+
+        <h3>4. Ý nghĩa lịch sử</h3>
+        <ul>
+            <li>Đánh dấu bước chuyển quan trọng của cách mạng Việt Nam.</li>
+            <li>Mở đường cho thắng lợi của Cách mạng tháng Tám 1945.</li>
+            <li>Khẳng định vai trò lãnh đạo trực tiếp của Bác Hồ trong nước.</li>
+        </ul>
+    </section>
+
+    <section id="s8" class="section">
+        <h2>Phần VIII & IX: Cách mạng tháng Tám và Ý nghĩa</h2>
+        
+        <div class="img-container">
+            <img src="img/images1755886-11.jpg" alt="Đọc Tuyên ngôn Độc lập">
+            <span class="img-caption">Bác đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình (2/9/1945)(nguồn: Báo Đồng Tháp) </span>
+        </div>
+
+        <h3>Phần VIII: Thành quả của cách mạng tháng tám và độc lập dân tộc </h3>
+        <p>Cách mạng tháng Tám 1945 đã lật đổ ách thống trị cũ, giành chính quyền về tay nhân dân và thành lập nước Việt Nam Dân chủ Cộng hòa, mở ra kỷ nguyên độc lập dân tộc, tự do cho đất nước.</p>
+
+        <h3>Phần IX: Ý nghĩa và bài học</h3>
+        <p>Cách mạng tháng Tám năm 1945 là một sự kiện lịch sử vĩ đại của dân tộc Việt Nam. Thắng lợi của Cách mạng tháng Tám 1945 đã mở ra kỷ nguyên mới – kỷ nguyên độc lập, tự do, đưa nhân dân ta từ thân phận nô lệ trở thành người làm chủ đất nước. Đồng thời, cách mạng còn khẳng định vai trò lãnh đạo đúng đắn của Hồ Chí Minh và Đảng. Từ đó, để lại nhiều bài học quý giá như phải có đường lối đúng đắn, phát huy sức mạnh đại đoàn kết toàn dân, biết nắm bắt thời cơ và chuẩn bị lực lượng chu đáo.</p>
+    </section>
+
+    <section id="s9" class="section">
+        <h2>PHẦN CÂU HỎI TRẮC NGHIỆM</h2>
+        <div class="quiz-container">
+            <h3 id="question-title">Đang tải câu hỏi...</h3>
+            <div id="options-container"></div>
+            <p id="quiz-result" style="font-weight: bold; margin-top: 20px;"></p>
+            <button id="next-btn" style="display:none; background: var(--accent); color: white; padding: 10px 20px; cursor: pointer;" onclick="loadQuestion()">Câu tiếp theo</button>
+        </div>
+    </section>
+</div>
+</div>
+    <section id="team-info">
+        <h2>Thông tin nhóm thực hiện</h2>
+        <ul class="member-list">
+            <li class="member-item"><strong>Nguyễn Thảo My</strong><br>Trưởng nhóm</li>
+            <li class="member-item"><strong>Nguyễn Mai Huy Hoàng</strong><br>Lập trình (Code Dev)</li>
+            <li class="member-item"><strong>Nguyễn Ngọc Tường Vy (46)</strong><br>Biên soạn nội dung</li>
+            <li class="member-item"><strong>Tô Phúc Vinh</strong><br>Biên soạn nội dung</li>
+            <li class="member-item"><strong>Nguyễn Mỹ An</strong><br>Biên soạn nội dung</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Góp ý & Liên hệ</h2>
+        <p>Chúng mình rất mong nhận được ý kiến đóng góp của bạn để hoàn thiện trang web hơn!</p>
+        <form class="contact-form" onsubmit="alert('Cảm ơn bạn đã gửi ý kiến góp ý!'); return false;">
+            <input type="text" placeholder="Họ và tên của bạn" required>
+            <input type="email" placeholder="Email liên lạc" required>
+            <textarea rows="5" placeholder="Nhập ý kiến đóng góp của bạn tại đây..." required></textarea>
+            <button type="submit">GỬI Ý KIẾN</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 - Tài liệu học tập về Chủ tịch Hồ Chí Minh</p>
+    <p>Nhóm 3 - Lớp 12C10</p>
+</footer>
+
+<script>
+    function showSection(num) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+        document.getElementById('s' + num).classList.add('active');
+        document.querySelectorAll('nav button')[num-1].classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    // Quiz Data
+    const quizData = [
+        { q: "Sự kiện Bác Hồ ra đi tìm đường cứu nước diễn ra vào năm nào?", a: ["1905", "1911", "1920", "1930"], c: 1 },
+        { q: "Tên gọi của Hồ Chí Minh lúc ra đi tìm đường cứu nước là gì?", a: ["Nguyễn Sinh Cung", "Nguyễn Tất Thành", "Nguyễn Ái Quốc", "Văn Ba"], c: 3 },
+        { q: "Bác Hồ ra đi tìm đường cứu nước từ địa điểm nào?", a: ["Hà Nội", "Huế", "Sài Gòn", "Hải Phòng"], c: 2 },
+        { q: "Bến cảng nơi Bác Hồ ra đi tìm đường cứu nước là:", a: ["Bến Nhà Rồng", "Bến Bạch Đằng", "Cảng Hải Phòng", "Cảng Đà Nẵng"], c: 0 },
+        { q: "Tên con tàu mà Bác Hồ làm việc khi ra đi tìm đường cứu nước là gì?", a: ["Latouche-Tréville", "Victoria", "Titanic", "Normandy"], c: 0 },
+        { q: "Mục đích chính của việc Bác Hồ ra đi tìm đường cứu nước là gì?", a: ["Du lịch khám phá thế giới", "Tìm con đường giải phóng dân tộc", "Học tập tại Pháp", "Làm giàu"], c: 1 },
+        { q: "Bác Hồ ra đi tìm đường cứu nước vào ngày nào?", a: ["2/9/1945", "3/2/1930", "5/6/1911", "19/5/1890"], c: 2 },
+        { q: "Khi lên tàu ra đi, Bác Hồ làm công việc gì?", a: ["Thuyền trưởng", "Phụ bếp", "Lái tàu", "Kỹ sư"], c: 1 },
+        { q: "Quốc gia đầu tiên Bác Hồ đến sau khi rời Việt Nam là:", a: ["Anh", "Pháp", "Mỹ", "Nhật Bản"], c: 1 },
+        { q: "Sự kiện Bác Hồ ra đi tìm đường cứu nước có ý nghĩa gì quan trọng nhất?", a: ["Mở đầu hành trình cứu nước mới", "Kết thúc chế độ phong kiến", "Thành lập Đảng Cộng sản", "Giành độc lập ngay lập tức"], c: 0 }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const resultText = document.getElementById('quiz-result');
+        const nextBtn = document.getElementById('next-btn');
+        resultText.innerText = "";
+        nextBtn.style.display = "none";
+
+        if(currentQuestion >= quizData.length) {
+            document.getElementById('question-title').innerText = "BẠN ĐÃ HOÀN THÀNH BÀI TRẮC NGHIỆM!";
+            document.getElementById('options-container').innerHTML = `<h3>Điểm của bạn: ${score}/${quizData.length}</h3>`;
+            return;
+        }
+
+        const q = quizData[currentQuestion];
+        document.getElementById('question-title').innerText = `Câu ${currentQuestion + 1}: ${q.q}`;
+        const container = document.getElementById('options-container');
+        container.innerHTML = "";
+
+        q.a.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = "option-btn";
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, q.c);
+            container.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(selected, correct) {
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+        
+        if(selected === correct) {
+            btns[selected].classList.add('correct');
+            score++;
+            document.getElementById('quiz-result').innerText = "Chính xác!";
+        } else {
+            btns[selected].classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Sai rồi!";
+        }
+        
+        currentQuestion++;
+        document.getElementById('next-btn').style.display = "block";
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
